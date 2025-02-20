@@ -1,0 +1,7 @@
+apiVersion: compute.crossplane.io/v1alpha1
+kind: ClusterClaim
+metadata:
+  name: my-cluster-claim
+spec:
+  clusterDefinitionRef:
+    name: my-cluster-definition

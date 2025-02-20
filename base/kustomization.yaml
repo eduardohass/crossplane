@@ -1,0 +1,3 @@
+resources:
+  - cluster-definition.yaml
+  - cluster-claim.yaml

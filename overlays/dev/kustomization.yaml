@@ -2,4 +2,6 @@ bases:
   - ../../base
 
 patchesStrategicMerge:
-  - patch.yaml
+  - cluster-definition.yaml
+  - cluster-claim.yaml
+  - cluster-composition.yaml

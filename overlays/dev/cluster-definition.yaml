@@ -1,0 +1,41 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xkubernetes.lab.example.com
+spec:
+  group: lab.example.com
+  names:
+    kind: XKubernetes
+    plural: xkubernetes
+    singular: xkubernetes
+  claimNames:
+    kind: KubernetesClaim
+    plural: kubernetesclaims
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                clusterName:
+                  type: string
+                  description: "Nome do cluster"
+                deletionProtection:
+                  type: boolean
+                  default: true
+                  description: "Proteção contra deleção acidental"
+                nodeCount:
+                  type: integer
+                  default: 3
+                  description: "Número de nodes no cluster"
+                kubernetesVersion:
+                  type: string
+                  default: "v1.25.0"
+                  description: "Versão do Kubernetes"
+              required:
+                - clusterName 

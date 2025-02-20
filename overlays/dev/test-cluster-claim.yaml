@@ -1,0 +1,10 @@
+apiVersion: lab.example.com/v1alpha1
+kind: KubernetesClaim
+metadata:
+  name: test-cluster
+  namespace: default
+spec:
+  clusterName: meu-cluster-teste
+  deletionProtection: true
+  nodeCount: 2
+  kubernetesVersion: "v1.25.0" 
